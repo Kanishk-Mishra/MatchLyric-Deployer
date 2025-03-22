@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lyric Match</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        @font-face {
+        font-family: 'Rezland';
+        src: url('Rezland.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+        
+        h1 {
+            font-family: 'Rezland';
+            font-size: 4rem;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            word-spacing: 1px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    
+        .app-poster-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .app-container {
+            width: 50%;
+            padding: 20px;
+            height: 50vh
+        }
+
+        .poster-container {
+            width: 50%;
+            text-align: center;
+        }
+
+        .poster-container img {
+            max-width: 100%;
+            max-height: auto;
+            border-radius: 10px;
+        }
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .light-mode .poster-container {
+            background-color: #f4f4f4;
+        }
+    
+        .lyric-snippet, .result-display {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #333;
+            transition: background-color 0.3s;
+        }
+    
+        .light-mode .lyric-snippet, .light-mode .result-display {
+            background-color: #f4f4f4;
+            border-color: #ccc;
+        }
+    
+        .btn {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #555;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+    
+        .btn:hover {
+            background-color: #777;
+            transform: scale(1.05);
+        }
+    
+        .btn:active {
+            background-color: #999;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+            
+        .light-mode .btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+    
+        .light-mode .btn:hover {
+            background-color: #0056b3;
+        }
+    
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 16px;
+            font-size: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+    
+        .toggle-btn:hover {
+            background-color: #555;
+            transform: scale(1.1);
+        }
+    
+        .toggle-btn:active {
+            background-color: #777;
+        }
+    
+        .light-mode .toggle-btn {
+            background-color: #ddd;
+            color: #333;
+        }
+        
+    </style>    
+</head>
+<body>
+    <div id="root"></div>
+    <!-- Main App Script -->
+    <script type="text/babel" src="App.js"></script>
+</body>
+</html>
